@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
+</head>
+<style>
+    body{
+        margin: 0;
+        padding: 0;
+    }
+    .header{
+        height: 200px;
+        width: 100%;
+        margin: 0px;
+        padding: 0px;
+        display: flex;
+        align-items: center;
+        gap: 150px;
+        color:aliceblue;
+        margin-top: -19px;
+        background-image: url("https://images.unsplash.com/photo-1440404653325-ab127d49abc1")
+    }
+    #head-title{
+        margin-left: 100px;
+        color: aliceblue;
+    }
+    .search-box{
+        display:flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto;
+        padding: 0 auto;
+        background-color: antiquewhite;
+        width: 60%;
+        margin-top: -15px;
+        
+
+    }
+    #input-box{
+        width: 100%;
+        height: 30px;
+        padding-left: 40px;
+        padding-right: 50px;
+        border-top-left-radius: 5px;
+        border-bottom-left-radius: 5px;
+        box-sizing: border-box;
+    }
+    .icon {
+        position: relative;
+        left: 23px;
+    }
+    #search-btn{
+        position: relative;
+        right: 20px;
+        
+        cursor: pointer;
+    }
+    
+    #link{
+        color: aliceblue;
+        text-decoration: none;
+    }
+    #link:hover{
+       color: blue;
+    }
+
+    #search-result{
+        width: 100%;
+        height: 100vh;
+        background-color:aquamarine;
+    }
+    
+
+</style>
+
+<body>
+    <header class="header">
+        <h2 id="head-title">Find your film here</h2>
+        <a id="link" href="">My Watchlist</a>
+    </header>
+
+    <div class="search-box">
+        <i class="fa-solid fa-magnifying-glass icon"></i>
+        <input type="text" placeholder="Search here" id="input-box">
+        <!-- <button id="search-btn"> Search</button> Search Button -->
+    </div>
+
+    <div id="search-result"></div>
+
+</body>
+
+<script>
+    fetch("http://www.omdbapi.com/?s=avengers&apikey=d99b99e6")
+        .then(res => res.json())
+        .then(data => {console.log(data)
+            document.getElementById("search-result").innerHTML = ` <img src=${data.Poster} class="card" /> `
+        });
+</script>
+</html>
