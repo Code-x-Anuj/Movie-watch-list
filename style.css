@@ -1,0 +1,85 @@
+body{
+    
+}
+.header{
+    height: 200px;
+    width: 100%;
+    margin: 0px;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color:aliceblue;
+    margin-top: -19px;
+    background-image: url("https://images.unsplash.com/photo-1440404653325-ab127d49abc1")
+}
+#head-title{
+    margin: 0;
+    color: aliceblue;
+}
+#link{
+    margin-right: 100px;
+    color: aliceblue;
+    text-decoration: none;
+}
+.search-box{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    padding: 0 auto;
+    width: 60%;
+    height: 30px;
+    margin-top: -15px;
+}
+#input-box{
+    width: 100%;
+    height: 30px;
+    padding-left: 40px;
+    padding-right: 50px;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border: 1px solid black;
+    box-sizing: border-box;
+    outline: none;
+}
+.icon {
+    position: relative;
+    left: 23px;
+}
+#search-btn{
+    position: relative;
+    right: 60px;
+    height: 27px;
+    border: none;
+    background-color:aliceblue;
+    cursor: pointer;
+    
+}
+
+#link:hover{
+   color: blue;
+}
+
+
+
+#movie-poster{
+    width: 25%;
+    height: 100%;
+    background-size: cover;
+    justify-content: center;
+    background-size: cover;
+    border: 1px solid blueviolet;
+   
+}
+.anuj{
+    width: 180px;
+    height: 230px;
+}
+.posterOfMovie{
+    position: relative;
+    margin: 10px 10px 10px 10px;
+    width: 90%;
+    height: 230px;
+    border: 2px solid black;
+}
