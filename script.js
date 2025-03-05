@@ -5,14 +5,14 @@ function searchMovie() {
     const searchTerm = document.getElementById("input-box").value;
     console.log(searchTerm);
     document.getElementById('search-result').innerHTML = "";
-    fetch(`http://www.omdbapi.com/?s=${searchTerm}&apikey=d99b99e6`)
+    fetch(`https://www.omdbapi.com/?s=${searchTerm}&apikey=d99b99e6`)
         .then(res => res.json())
         .then(data => {console.log(data)
             data.Search.forEach(movie => { 
                 // console.log(movie.Poster)
                 title = movie.Title
                 console.log(title);
-                fetch(`http://www.omdbapi.com/?t=${title}&apikey=d99b99e6`)
+                fetch(`https://www.omdbapi.com/?t=${title}&apikey=d99b99e6`)
                     .then(response => response.json())
                     .then(movieData => {console.log(movieData)
                     displayMovie(movieData);
