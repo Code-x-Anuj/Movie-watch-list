@@ -1,5 +1,5 @@
 body{
-    
+    margin: 0;
 }
 .header{
     height: 200px;
@@ -61,25 +61,33 @@ body{
    color: blue;
 }
 
-
-
-#movie-poster{
-    width: 25%;
-    height: 100%;
-    background-size: cover;
-    justify-content: center;
-    background-size: cover;
-    border: 1px solid blueviolet;
-   
+.movie{
+    width: 100%;
+    display: flex;
+    background: #fff;
+    border: 1px solid #000000;
 }
-.anuj{
+.image{
     width: 180px;
     height: 230px;
 }
-.posterOfMovie{
+.movie-display{
     position: relative;
+    display: flex;
+    gap: 20px;
     margin: 10px 10px 10px 10px;
     width: 90%;
     height: 230px;
     border: 2px solid black;
+}
+.textInfo{
+    margin-left: 10px;
+    font-size: 14px;
+}
+.watchlist-btn{
+    cursor: pointer;
+}
+.watchlist-btn :hover{
+    background-color: brown;
+    color: #fff;
 }
