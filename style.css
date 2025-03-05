@@ -1,5 +1,7 @@
 body{
-    margin: 0;
+    padding: 0;
+    margin:0;
+   
 }
 .header{
     height: 200px;
@@ -58,11 +60,12 @@ body{
 }
 
 #link:hover{
-   color: blue;
+   color: rgb(26, 217, 100);
 }
 
 .movie{
-    width: 100%;
+    width: 90%;
+    margin: 10px;
     display: flex;
     background: #fff;
     border: 1px solid #000000;
@@ -71,15 +74,7 @@ body{
     width: 180px;
     height: 230px;
 }
-.movie-display{
-    position: relative;
-    display: flex;
-    gap: 20px;
-    margin: 10px 10px 10px 10px;
-    width: 90%;
-    height: 230px;
-    border: 2px solid black;
-}
+
 .textInfo{
     margin-left: 10px;
     font-size: 14px;

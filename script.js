@@ -33,19 +33,25 @@ function displayMovie(movie) {
                </div>
                 <p>${movie.Plot}</p>
                 <p>${movie.Actors}</p>
-                <button class ="watchlist-btn"> Add to watchlist </button>
+                <button class ="watchlist-btn" id = "add-btn"> Add to watchlist </button>
             </div> 
         </div> `;
     document.getElementById('search-result').appendChild(movieElement);
+
+        let watchlistBtn = movieElement.querySelector(".watchlist-btn");
+        watchlistBtn.addEventListener("click", function () {
+           // alert(`${movie.Title} added to watchlist!`)
+            //localStorage.setItem("my-watchlist")
+            let watchlist = JSON.parse(localStorage.getItem("watchlist")) || [];
+            watchlist.push(movie);
+            localStorage.setItem("watchlist", JSON.stringify(watchlist));
+            alert(`${movie.Title} added to watchlist`)
+            console.log(JSON.parse(localStorage.getItem("watchlist")))
+            console.log(`${movie.Title} added to watchlist!`);
+            
+        });
 }
-    // function showPoster(poster) {
-    //     const resultMovies = document.createElement('div');
-    //     resultMovies.className = "movieInfo";
-    //     resultMovies.innerHTML =  `<img src = ${poster.Poster} class = "image" />  
-    //                              <h3 id = "titleOfMovie">${poster.Title}</h3>
-    //                              <div class = "otherInfo"><p> ${poster.Year} </p></div>
-    //     ` ;
-    //     document.getElementById('search-result').appendChild(resultMovies);
-    // }
+
+   
  
  
