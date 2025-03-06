@@ -30,7 +30,7 @@ function searchMovie() {
                 fetch(`https://www.omdbapi.com/?t=${title}&apikey=d99b99e6`)
                     .then(response => response.json())
                     .then(movieData => {
-                        // console.log(movieData)
+                        console.log(movieData)
                     displayMovie(movieData);
                      });
                     // showPoster(movie)
@@ -42,16 +42,27 @@ function searchMovie() {
 function displayMovie(movie) {
     const movieElement = document.createElement('div');
     movieElement.className = "movie-display";
-    movieElement.innerHTML = ` <div class ="movie"> 
-        <img src = ${movie.Poster} class = "image" /> 
-            <div class ="textInfo"> <h3 id= "titleOfMovie" > ${movie.Title} </h3> 
-               <div class ="data1">  <p>${movie.Runtime} &nbsp;&nbsp; ${movie.Genre} &nbsp;&nbsp; ${movie.Type} </p> 
-               </div>
-                <p>${movie.Plot}</p>
-                <p>${movie.Actors}</p>
-                <button class ="watchlist-btn" id = "add-btn"> Add to watchlist </button>
-            </div> 
-        </div> `;
+    movieElement.innerHTML = ` 
+    <div class ="movie"> 
+            <img src = ${movie.Poster} class = "image" /> 
+                <div class ="textInfo"> 
+                    <div id ="titleData" > <h3 id= "titleOfMovie" > ${movie.Title} </h3> 
+                        <p> <img src = ${"star.png"} class = "imageStar" /> ${movie.imdbRating} </p>
+                    </div>
+                     
+                    <div class ="data1">  
+                            <p>${movie.Runtime} &nbsp;&nbsp; ${movie.Genre} &nbsp;&nbsp; ${movie.Type} </p> 
+        
+                            <button class ="watchlist-btn" id = "add-btn"> <img src = ${"addIcon.png"} class = "image1" /> Watchlist </button>
+                    </div>
+                    <p>${movie.Plot}</p>
+                    <p>${movie.Actors}</p>
+                    
+                </div> 
+    </div> 
+    <div class="hr-container">
+     <hr />
+    </div>   `;
     document.getElementById('search-result').appendChild(movieElement);
 
         let watchlistBtn = movieElement.querySelector(".watchlist-btn");
@@ -67,8 +78,6 @@ function displayMovie(movie) {
                 watchlist.push(movie);
             localStorage.setItem("watchlist", JSON.stringify(watchlist));
             alert(`${movie.Title} added to watchlist`);
-            
-
             
             // console.log(JSON.parse(localStorage.getItem("watchlist")))
             // console.log(`${movie.Title} added to watchlist!`);

@@ -2,6 +2,7 @@ body{
     padding: 0;
     margin:0;
     position: relative;
+    font-family: "Inter", sans-serif;
 }
 body::before {
     content: "";
@@ -10,16 +11,15 @@ body::before {
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url('https://images.unsplash.com/photo-1440404653325-ab127d49abc1'); /* Duplicate the image URL */
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
-    opacity: 0.6;
+    opacity: 0.8;
     z-index: -1;
   }
 
 .header{
-    height: 200px;
+    height: 250px;
     width: 100%;
     margin: 0px;
     padding: 0 20px;
@@ -28,19 +28,23 @@ body::before {
     align-items: center;
     color:aliceblue;
     margin-top: -19px;
-    background-image: url("https://images.unsplash.com/photo-1440404653325-ab127d49abc1")
+    background-image: url("image.png")
 }
 #head-title{
     margin: 0;
+    margin-left: 50px;
     color: aliceblue;
+    font-size:40px;
 }
 #link{
     margin-right: 100px;
-    color: aliceblue;
+    color: rgb(255, 255, 255);
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 20px;
+    letter-spacing: 0%;
     text-decoration: none;
-    border:1px solid #000000;
     padding: 5px;
-    border-radius: 12px;
 }
 .search-box{
     display:flex;
@@ -59,8 +63,9 @@ body::before {
     padding-right: 50px;
     border-top-left-radius: 5px;
     border-bottom-left-radius: 5px;
-    border: 1px solid black;
-    border-radius: 14px;
+    border: 1px solid rgb(34, 30, 30);
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
     box-sizing: border-box;
     outline: none;
 }
@@ -70,66 +75,125 @@ body::before {
 }
 #search-btn{
     position: relative;
-    right: 60px;
-    height: 27px;
-    border: none;
-    background-color:aliceblue;
+    
+    width:100px;
+    height: 40px;
+    border: 1px solid rgb(34, 30, 30);
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    
     cursor: pointer;
     
 }
 
 #link:hover{
-   color: rgb(26, 217, 100);
-   border: 1px solid black;
-   background-color: #000000;
-   border-radius: 12px;
+   color: rgb(0, 0, 0);
+   background-color: #ffffff;
+   border-radius: 16px;
 }
+/* #search-result{
+    margin-top: 50px;
+} */
 #background-text {
     display: flex;
-    color: #0c292a;
+    flex-direction: column;
+    height: 50px;
+    color: #b8b8b8;
     justify-content: center;
-    margin-top: 200px;
-    border: 2px solid rgb(21, 9, 33);
-    box-sizing: border-box;
-    border-radius: 12px;
+    align-items: center;
+    margin-top: 250px;
     background-color: #fff;
     margin-left: 50px;
     margin-right: 50px;
+    opacity: .5;
+}
+#background-text img{
+    max-width: 100px;
+    height: auto;
 }
 .movie{
     width: 90%;
-    margin: 10px;
+    margin:20px 20px 20px 50px;
+    height: 200px;
     display: flex;
-    background: #fff;
-    border: 1px solid #000000;
 }
+.hr-container {
+    width: 90%; /* Match the movie class width */
+    margin-left: 50px;
+  }
 .image{
     width: 180px;
-    height: 230px;
+    height: 200px;
+    border-radius: 3px;
+}
+#titleData{
+    display: inline-flex;
+    gap: 50px;
+}
+.imageStar{
+    height: 14px;
+    margin-top: 5px;
+}
+.textInfo{
+    display: flex;
+    flex-direction: column;
+    margin-left: 15px;
+    font-size: 14px;
+    margin-right: 10px;
 }
 
-.textInfo{
-    margin-left: 10px;
-    font-size: 14px;
+.data1{
+    display: inline-flex;
+    align-items: center;
+    gap: 30px;
 }
 .watchlist-btn{
+    width: 90px;
+    display:inline-flex;
+    gap: 5px;
+    margin-top: 5px;
+    background: transparent;
     cursor: pointer;
+    border: none;
+    
 }
-.watchlist-btn :hover{
-    background-color: brown;
-    color: #fff;
+.image1{
+    height: 15px;
+}
+.textInfo h3,
+.textInfo .data1,
+.textInfo p {
+  margin-bottom: 5px;
+}
+.textInfo .data1,
+.textInfo p {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 18px;
+}
+.data1 p{
+    font-size: 12px;
 }
 #watchlist-backkground-text{
     display: flex;
-    color: #000000;
+    flex-direction: column;
+    height: 50px;
+    color: #2f3535;
     justify-content: center;
-    margin-top: 200px;
-    border: 2px solid rgb(21, 9, 33);
-    box-sizing: border-box;
-    border-radius: 12px;
-    background-color: rgba(255, 255, 255, 0.5);
+    align-items: center;
+    margin-top: 250px;
+    background-color: #fff;
     margin-left: 50px;
     margin-right: 50px;
+    opacity: .8;
+}
+#watchlist-background-text a {
+    text-decoration: none;
+    color: #2f3535;
+}
+#go-back-link{
+    text-decoration: none;
+    color: #222323;
 }
 #fetching-error{
     display: flex;
