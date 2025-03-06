@@ -3,7 +3,7 @@ function loadWatchlist(){
     const watchlistContainer = document.getElementById("search-result")
 
     if(watchList.length === 0){
-        watchlistContainer.innerHTML = "<p>No movies in watchlist.</p>";
+        watchlistContainer.innerHTML = '<h1 id ="watchlist-backkground-text"> No movies in your watchlist.</h1>';
         return;
     }
 
@@ -25,4 +25,4 @@ function removeFromWatchlist(index) {
     loadWatchlist();
 }
 
-window.onload = loadWatchlist; 
+window.onload = loadWatchlist;

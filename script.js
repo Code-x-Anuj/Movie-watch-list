@@ -3,18 +3,34 @@ let title ="";
 document.getElementById("search-btn").addEventListener("click",searchMovie);
 function searchMovie() {
     const searchTerm = document.getElementById("input-box").value;
-    console.log(searchTerm);
+
+    
+    if (searchTerm === "") {
+        alert("Please enter a movie name before searching!"); // Alert if empty
+        return; // Stop function execution
+    }
+
+    // console.log(searchTerm);
     document.getElementById('search-result').innerHTML = "";
+    document.getElementById("input-box").value = "";
     fetch(`https://www.omdbapi.com/?s=${searchTerm}&apikey=d99b99e6`)
         .then(res => res.json())
-        .then(data => {console.log(data)
+        .then(data => {
+            // console.log(data)
+
+            if (data.Response === "False") {
+                // console.log(data.Error)
+                document.getElementById("search-result").innerHTML = `<h2 id ="fetching-error"> ${data.Error} </h2>`
+                return;
+            }
             data.Search.forEach(movie => { 
                 // console.log(movie.Poster)
                 title = movie.Title
-                console.log(title);
+                // console.log(title);
                 fetch(`https://www.omdbapi.com/?t=${title}&apikey=d99b99e6`)
                     .then(response => response.json())
-                    .then(movieData => {console.log(movieData)
+                    .then(movieData => {
+                        // console.log(movieData)
                     displayMovie(movieData);
                      });
                     // showPoster(movie)
@@ -43,11 +59,19 @@ function displayMovie(movie) {
            // alert(`${movie.Title} added to watchlist!`)
             //localStorage.setItem("my-watchlist")
             let watchlist = JSON.parse(localStorage.getItem("watchlist")) || [];
-            watchlist.push(movie);
+            let movieExists = watchlist.some(item => item.imdbID === movie.imdbID);
+            if (movieExists) {
+                alert(`${movie.Title} is already in your watchlist!`);
+                return;
+            }
+                watchlist.push(movie);
             localStorage.setItem("watchlist", JSON.stringify(watchlist));
-            alert(`${movie.Title} added to watchlist`)
-            console.log(JSON.parse(localStorage.getItem("watchlist")))
-            console.log(`${movie.Title} added to watchlist!`);
+            alert(`${movie.Title} added to watchlist`);
+            
+
+            
+            // console.log(JSON.parse(localStorage.getItem("watchlist")))
+            // console.log(`${movie.Title} added to watchlist!`);
             
         });
 }
