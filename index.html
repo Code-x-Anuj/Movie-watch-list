@@ -1,38 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
-
-</head>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
-<body>
-<div class="content"> 
-    <div class="header">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MovieWatchlist</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    />
+  </head>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="style.css" />
+  <body>
+    <div class="content">
+      <div class="header">
         <h2 id="head-title">Find your film</h2>
         <a id="link" href="watchlist.html">My Watchlist</a>
-        
-    </div>
+      </div>
 
-    <div class="search-box">
+      <div class="search-box">
         <i class="fa-solid fa-magnifying-glass icon"></i>
-        <input type="text" placeholder="Search for a movie" id="input-box">
-        <button id="search-btn"> Search</button>
-    </div>
+        <input type="text" placeholder="Search for a movie" id="input-box" />
+        <button id="search-btn">Search</button>
+      </div>
 
-    <div id="search-result"> 
+      <div id="search-result">
         <div id="background-text">
-            <img src="Icon.png" alt="">
-            <h1 >Start Exploring </h1>
+          <img src="Icon.png" alt="" />
+          <h1>Start Exploring</h1>
         </div>
-        
+      </div>
+      <div class="loading">
+        <span id="loader"></span>
+      </div>
     </div>
-</div>
-</body>
-<script src="script.js"></script>
+  </body>
+  <script src="script.js"></script>
 </html>
