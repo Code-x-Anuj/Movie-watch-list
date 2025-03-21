@@ -1,8 +1,9 @@
 let searchResult = document.getElementById("search-result");
 
-document.getElementById("search-btn").addEventListener("click", searchMovie);
+document.getElementById("search-form").addEventListener("submit", searchMovie);
 
-function searchMovie() {
+function searchMovie(event) {
+    event.preventDefault();
     const searchTerm = document.getElementById("input-box").value.trim();
     if (searchTerm === "") {
         alert("Please enter a movie name before searching!"); // Alert if empty

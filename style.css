@@ -207,11 +207,10 @@ body::before {
 }
 #watchlist-background-text a {
     text-decoration: none;
-    color: #2f3535;
+    color: #273cb6;
 }
 #go-back-link{
     text-decoration: none;
-    color: #222323;
     -webkit-tap-highlight-color: transparent;
     -webkit-touch-callout: none; 
     user-select: none; 
